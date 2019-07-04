@@ -14,6 +14,6 @@ class TipsController < ApplicationController
       req.params['oauth_token'] = session[:token]
       req.params['v'] = '20160201'
     end
-    @results = JSON.parse(resp.body)["response"]["tips"]["items"]
+    @results = JSON.parse(resp.body)["response"]["list"]["listItems"]["items"]
   end
 end
